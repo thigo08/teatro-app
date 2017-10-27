@@ -1,12 +1,37 @@
-<div>
-  <app-nav [barraLateral]="sidenav"></app-nav>
+<app-nav [barraLateral]="sidenav"></app-nav>
 
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav class="example-sidenav">
-    </mat-sidenav>
-  </mat-sidenav-container>
+<mat-sidenav-container class="docs-component-viewer-sidenav-container mat-drawer-container mat-sidenav-container">
 
-  <router-outlet></router-outlet>
+  <mat-sidenav #sidenav mode="side" opened="false" class="docs-component-viewer-sidenav mat-drawer mat-sidenav ng-tns-c11-1 ng-trigger ng-trigger-transform mat-drawer-side"
+    tabindex="-1" style="transform: translate3d(0px, 0px, 0px); visibility: visible;">
+    <nav>
+      <h3>Menu</h3>
+      <ul>
+        <li>
+          <a routerlinkactive="docs-component-viewer-sidenav-item-selected">
+          Eventos
+            </a>
+        </li>
+        <li>
+          <a routerlinkactive="docs-component-viewer-sidenav-item-selected">
+            Teatro
+          </a>
+        </li>
+        <li>
+          <a routerlinkactive="docs-component-viewer-sidenav-item-selected">
+          Configurações
+            </a>
+        </li>
+      </ul>
+    </nav>
+  </mat-sidenav>
 
-</div>
-<app-footer></app-footer>
+  <div class="my-content">
+    <div style="margin-left: 20px; margin-right: 0px;">
+      <router-outlet></router-outlet>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+
+</mat-sidenav-container>
